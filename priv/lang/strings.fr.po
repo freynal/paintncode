@@ -1,0 +1,188 @@
+msgid "lblBlogDescription"
+msgstr "Description"
+
+msgid "lblHome"
+msgstr "accueil"
+
+msgid "lblHomeURL"
+msgstr ""
+
+msgid "lblArtwork"
+msgstr "portfolio"
+
+msgid "lblArtworkURL"
+msgstr "portfolio"
+
+msgid "lblPaintings"
+msgstr "illustration"
+
+msgid "lblPaintingsURL"
+msgstr "illustration"
+
+msgid "lblConceptArt"
+msgstr "concept art"
+
+msgid "lblConceptArtURL"
+msgstr "concept-art"
+
+msgid "lblSpeedPainting"
+msgstr "speed painting"
+
+msgid "lblSpeedPaintingURL"
+msgstr "speed-painting"
+
+msgid "lblSketches"
+msgstr "croquis"
+
+msgid "lblSketchesURL"
+msgstr "croquis"
+
+msgid "lblSculpture"
+msgstr "sculpture"
+
+msgid "lblSculptureURL"
+msgstr "sculpture"
+
+msgid "lblProgramming"
+msgstr "informatique"
+
+msgid "lblProgrammingURL"
+msgstr "informatique"
+
+msgid "lblWeb"
+msgstr "web"
+
+msgid "lblWebURL"
+msgstr "web"
+
+msgid "lblSoftware"
+msgstr "logiciel"
+
+msgid "lblSoftwareURL"
+msgstr "logiciel"
+
+msgid "lblSGBD"
+msgstr "base de donnée"
+
+msgid "lblSGBDURL"
+msgstr "base-de-donnee"
+
+msgid "lblSystem"
+msgstr "système"
+
+msgid "lblSystemURL"
+msgstr "systeme"
+
+msgid "lblProjects"
+msgstr "projets"
+
+msgid "lblProjectsURL"
+msgstr "projets"
+
+msgid "lblGames"
+msgstr "jeux"
+
+msgid "lblGamesURL"
+msgstr "jeux"
+
+msgid "lblBooks"
+msgstr "livres"
+
+msgid "lblBooksURL"
+msgstr "livres"
+
+msgid "lblComics"
+msgstr "bandes dessinées"
+
+msgid "lblComicsURL"
+msgstr "bandes-dessinees"
+
+msgid "lblContests"
+msgstr "concours"
+
+msgid "lblContestsURL"
+msgstr "concours"
+
+msgid "lblFR"
+msgstr "french"
+
+msgid "lblEN"
+msgstr "english"
+
+msgid "lblProgrammer"
+msgstr "Développeur"
+
+msgid "lblCategory"
+msgstr "Catégorie"
+
+msgid "lblDependencies"
+msgstr "Dépendences"
+
+msgid "lblLevel"
+msgstr "Niveau"
+
+msgid "lblBeginner"
+msgstr "Débutant"
+
+msgid "lblIntermediate"
+msgstr "Intermediaire"
+
+msgid "lblAdvanced"
+msgstr "Avancé"
+
+msgid "lblExpert"
+msgstr "Expert"
+
+msgid "lblRuntime"
+msgstr "Environnement d'exécution"
+
+msgid "lblTargetProduct"
+msgstr "Logiciel utilisé"
+
+msgid "lblRepository"
+msgstr "Dépôt de code"
+
+msgid "lblProgrammingLanguage"
+msgstr "Language"
+
+msgid "lblFrom"
+msgstr "De"
+
+msgid "lblSubject"
+msgstr "Objet"
+
+msgid "lblMessage"
+msgstr "Message"
+
+msgid "lblContact"
+msgstr "Me Contacter"
+
+msgid "lblSendMail"
+msgstr "Envoyer le mail"
+
+msgid "lblOnlineCV"
+msgstr "CV en ligne"
+
+msgid "lblExperience"
+msgstr "Expérience"
+
+msgid "lblCompetence"
+msgstr "Compétences"
+
+msgid "lblFormation"
+msgstr "Formation"
+
+msgid "lblMail"
+msgstr "Courriel"
+
+msgid "lblSite"
+msgstr "Site web"
+
+msgid "lblError"
+msgstr "Erreur"
+
+msgid "lbl404"
+msgstr "Erreur 404 : Une patate a volé cette page"
+
+msgid "lblNothing"
+msgstr "Rien ici pour le moment !"

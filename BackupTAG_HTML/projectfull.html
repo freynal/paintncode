@@ -1,0 +1,28 @@
+{% comment %}
+NEEDED :
+post = erlang-introduction
+{% endcomment %}
+
+{% with actUrl=post.infos.action|add:"URL" %}
+	<article itemscope itemtype="http://schema.org/CreativeWork">
+		<header>
+			<div><img src="{{post.url_image}}" alt=""/></div>
+			<meta itemprop="url" content="{{ EN }}/{% trans actUrl %}/{% trans catUrl %}/{{post.fr_url_detail}}"/>
+			<h3 itemprop="name">{{post.fr_title}}</h3>
+			<time itemprop="dateCreated dateModified datePublished" datetime="{{post.creation_time|date:"c"}}">{{post.creation_time|date:"d/m/Y"}}</time><br/>
+			<ul>
+				<li itemprop="genre">{{post.fr_genre}}</li>
+			</ul>
+			<div class="clearer"></div>
+			<div itemprop="description headline">{{post.fr_description|safe|linebreaks}}</div>
+			<div class="clearer"></div>
+		</header>
+		<div itemprop="articleBody">
+			{{post.fr_content|safe|linebreaks}}
+		</div>
+		<footer>
+			{% if post.download_link %}{% endif %}
+			<div class="clearer"></div>
+		</footer>
+	</article>
+{% endwith %}

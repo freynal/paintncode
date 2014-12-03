@@ -1,0 +1,48 @@
+{% comment %}
+NEEDED :
+post = erlang-introduction
+{% endcomment %}
+
+{% with actUrl=post.infos.action|add:"URL" %}
+</article>
+	<article class="detail" itemscope itemtype="http://schema.org/TechArticle">
+	<header>
+		<meta itemprop="url" content="{{ EN }}/{% trans actUrl %}/{% trans catUrl %}/{{post.url}}"/>
+		<h3 itemprop="name">{{post.title|capfirst}}</h3>
+		</a>
+		<time itemprop="dateCreated datePublished" datetime="{{post.infos.creation_time|date:"c"}}">{{compute.creation_time|date:"d/m/Y"}}</time><br/>
+		<meta itemprop="dateModified" content="{{post.infos.modification_time|date:"c"}}"/>
+		{% if post.codedetail %}
+		<ul itemscope itemtype="http://schema.org/Code">
+			{%if post.codedetail.programming_language %}
+			<li>{% trans "lblProgrammingLanguage" %} : <span itemprop="programmingLanguage">{{post.codedetail.programming_language}}</span></li>
+			{% endif %}
+			{%if post.codedetail.code_repository%}
+			<li>{% trans "lblRepository" %} : <a itemprop="codeRepository" href="{{compute.code_repository}}">{{post.codedetail.code_repository}}</a></li>
+			{% endif %}
+			{%if post.codedetail.target_product %}
+			<li>{% trans "lblTargetProduct" %} : <span itemprop="targetProduct">{{post.codedetail.target_product}}</span></li>
+			{% endif %}
+			{%if post.codedetail.runtime %}
+			<li>{% trans "lblRuntime" %} : <span itemprop="runtime">{{post.codedetail.runtime}}</span></li>
+			{% endif %}
+		</ul>
+		{% endif %}
+		<div class="clearer"></div>
+		<div itemprop="description headline">{{post.description|safe}}</div>
+		<div class="clearer"></div>
+	</header>
+	<div itemprop="articleBody">
+		{{post.content|safe}}
+	</div>
+	<footer>
+		{%if compute.dependencies %}
+		<div>{% trans "lblDependencies" %} : <span itemprop="dependencies">{{post.genre|safe}}</span></div>
+		{% endif %}
+		<span> {% trans "lblLevel" %} : <span itemprop="proficiencyLevel">{% trans post.codedetail.level %}</span><br/>
+		{% trans "lblCategory" %} : <a itemprop="genre" href="{{ EN }}/{% trans actUrl %}/{% trans catUrl %}">{% trans post.category|capfirst %}</a></span>
+		<div class="clearer"></div>
+		<div class="clearer"></div>
+	</footer>
+</article>
+{% endwith %}

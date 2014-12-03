@@ -1,0 +1,2 @@
+-module (base, [Id, InfosId, Category, Url, Title, Description, Content, Genre, Lang]).
+-belongs_to(infos).

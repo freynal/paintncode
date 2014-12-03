@@ -1,0 +1,43 @@
+{% extends "master.html" %}
+
+{% block content %}
+<div itemprop="author creator copyrightHolder" class="vcard about" itemscope itemtype="http://schema.org/Person">
+	<img alt="Francois Reynal Portrait" itemprop="image" class="photo contact-photo" src="/static/images/interface/Francois-Reynal.png" />
+	<div class="center">
+		<h2 itemprop="name" class="fn">Francois Reynal</h2>
+		<span itemprop="jobTitle" class="title">{% trans "lblProgrammer" %}</span>
+		<div id="resume">
+			<p><a href="http://www.doyoubuzz.com/francois-reynal" title="{% trans "lblOnlineCV" %}" target="_blank"><img alt="resume" src="/static/images/interface/cv/resume.png"/>{% trans "lblOnlineCV" %}</a>
+			<p>
+			<p><img alt="briefcase" title="{% trans "lblExperience" %}" src="/static/images/interface/cv/briefcase.png"/>
+				<img alt="Dassault Systèmes" title="2014&#010;Dassault Systèmes" src="/static/images/interface/cv/dassault-systemes.png"/>
+				<img alt="Microsoft" title="2012-2014&#010;Microsoft" src="/static/images/interface/cv/microsoft.png"/>
+				<img alt="Bouygues Télécom" title="2011-2012&#010;Bouygues Télécom" src="/static/images/interface/cv/bouygues-telecom.png"/>
+			</p>
+			<p><img alt="wrench" title="{% trans "lblCompetence" %}" src="/static/images/interface/cv/wrench.png"/>C C++ C# Java JEE Python Erlang</p>
+			<p><img alt="scholar" title="{% trans "lblFormation" %}" src="/static/images/interface/cv/scholar.png"/> Master Informatique UPMC Paris VI</p>
+			<p itemprop="address" itemscope itemtype="http://schema.org/PostalAddress" class="adr">
+				<a href="https://www.google.fr/maps/preview?q=malakoff&amp;oe=UTF-8&amp;ie=UTF-8&amp;ei=Ob6AU9uHBYypOsiegNAK&amp;ved=0CAgQ_AUoAQ" target="_blank">
+				<img alt="scholar" title="Formation" src="/static/images/interface/cv/address.png"/> 
+				<span itemprop="addressLocality" class="locality">Malakoff</span>
+				<span itemprop="postalCode" class="postal-code">92240</span>
+				<span itemprop="addressCountry" class="country-name">France</span>
+				</a>
+			</p>
+			<p itemprop="email" class="email"><a href="mailto:francois-reynal@paint-n-code.com"><img alt="mail" title="{% trans "lblMail" %}" src="/static/images/interface/cv/mail.png"/>francois-reynal@paint-n-code.com</a></p>
+			<p><a itemprop="url" class="url" href="http://paint-n-code.com/"><img alt="scholar" title="{% trans "lblSite" %}" src="/static/images/interface/cv/website.png"/> Paint 'n' Code</a></p>
+		</div>
+	</div>
+	<div class="contact">
+		<form method="post" action="/sendmail" id="sendmail">
+			<h2>{% trans "lblContact" %}</h2>
+			<input type="text" placeholder="{% trans "lblFrom" %}" name="from"/>
+			<input type="text" placeholder="{% trans "lblSubject" %}" name="subject"/>
+			<textarea placeholder="{%trans "lblMessage" %}" rows="15" name="message"></textarea>
+			<span id="message"></span>
+			<input type="submit" value="{% trans "lblSendMail" %}"/>
+		</form>
+	</div>
+</div>
+<script type="text/javascript" src="/static/js/mail.min.js"></script>
+{% endblock %}

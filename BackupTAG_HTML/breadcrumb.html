@@ -1,0 +1,49 @@
+{% comment %}
+NEEDED :
+action = lblProgramming
+category = lblWeb
+post = erlang-introduction
+postTitle = Introduction à Erlang
+{% endcomment %}
+
+<ul id="breadcrumb" itemprop="breadcrumb">
+			<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a itemprop="url" href="{{ EN }}/">
+				<img src="/static/images/interface/home.png" alt="{% trans "lblHome" %}" title="{% trans "lblHome" %}"/>
+				<meta  itemprop="title" content="{% trans "lblHome" %}"/>
+				</a>
+			</li>
+
+
+
+{% if action %}
+{% with actionURL=action|add:"URL" %}
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><pre> > </pre>
+	<a itemprop="url" href="{{ EN }}/{% trans actionURL %}">
+	<span itemprop="title">{% trans action|capfirst %}</span>
+	</a>
+</li>
+
+{% if category %}
+{% with categoryURL=category|add:"URL"  %}
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><pre> > </pre>
+	<a itemprop="url" href="{{ EN }}/{% trans actionURL %}/{% trans categoryURL %}">
+	<span itemprop="title">{% trans category|capfirst %}</span>
+	</a>
+</li>
+
+{% if post %}
+<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb"><pre> > </pre>
+	<a itemprop="url" href="{{ EN }}/{% trans actionURL %}/{% trans categoryURL %}/{{ post }}">
+	<span itemprop="title">{{ postTitle }}</span>
+	</a>
+</li>
+
+{% endif %}
+{% endwith %}
+{% endif %}
+{% endwith %}
+{% endif %}
+
+
+</ul>

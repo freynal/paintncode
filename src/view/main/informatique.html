@@ -1,0 +1,31 @@
+{% extends "master.html" %}
+{% block title %}{% if computing %}{{ computing.title }} | {% endif %}{% trans "lblProgramming" %} | {% endblock %}
+
+{% block content %}
+<div class="computing">
+	{% if post %}
+		{% with catUrl=post.category|add:"URL" %}<section id="{% trans catUrl %}">
+		<header><h2>{% trans post.category %}</h2></header>
+		{% computingfull post=post %}
+		{% endwith %}
+		</section>
+	{% elif list %}
+		{% for section in list %}
+			{% if section %}
+			{% for computing in section %}
+				{% with catUrl=computing.category|add:"URL" %}
+				{% if forloop.first %}
+					<section id="{% trans catUrl %}">
+					<header><h2>{% trans computing.category %}</h2></header>
+				{% endif %}
+				{% computingpreview post=computing %}
+				{% endwith %}
+			{% endfor %}
+			</section>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		<p>Nothing here yet !</p>
+	{% endif %}
+</div>
+{% endblock %}

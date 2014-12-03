@@ -1,0 +1,96 @@
+{% spaceless %}
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><style type="text/css">input, select {width:100%} textarea {width:100%;height:300px}</style></head>
+<body>
+<h1>Admin Page !</h1>
+
+<ul>
+<li><h4><a href="#add">Add</a></h4></li>
+<li><h4><a href="#edit-delete">Edit / Delete</a></h4></li>
+</ul>
+
+<h1 id="add">Add</h1>
+
+<form method="pOST" action="{% url action="addbase" %}">
+
+<select name="action">
+<option value="lblArtwork" selected>{% trans "lblArtwork" %}</option>
+<option value="lblProgramming">{% trans "lblProgramming" %}</option>
+<option value="lblProjects">{% trans "lblProjects" %}</option>
+</select></br>
+
+<select name="category">
+
+<option disabled role="separator">--   {% trans "lblArtwork" %}  --</option>
+<option value="lblPaintings" selected>{% trans "lblPaintings" %}</option>
+<option value="lblConceptArt">{% trans "lblConceptArt" %}</option>
+<option value="lblSpeedPainting">{% trans "lblSpeedPainting" %}</option>
+<option value="lblSketches">{% trans "lblSketches" %}</option>
+<option value="lblSculpture">{% trans "lblSculpture" %}</option>
+
+<option disabled role="separator">-- {% trans "lblProgramming" %} --</option>
+<option value="lblWeb">{% trans "lblWeb" %}</option>
+<option value="lblSoftware">{% trans "lblSoftware" %}</option>
+<option value="lblSGBD">{% trans "lblSGBD" %}</option>
+<option value="lblSystem">{% trans "lblSystem" %}</option>
+
+<option disabled role="separator">--    {% trans "lblProjects" %}   --</option>
+<option value="lblGames">{% trans "lblGames" %}</option>
+<option value="lblBooks">{% trans "lblBooks" %}</option>
+<option value="lblComics">{% trans "lblComics" %}</option>
+<option value="lblContests">{% trans "lblContests" %}</option>
+</select>
+
+<input type="checkbox" name="half" value="half">Is half ?<br/>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<div class="half">
+<h4>French</h4>
+<input name="frurl" placeholder="Url fr"></input><br/>
+<input name="frtitle" placeholder="Titre fr"></input><br/>
+<textarea name="frdescription" placeholder="Description fr"></textarea><br/>
+<textarea name="frcontent" placeholder="Content fr"></textarea><br/>
+<input name="frgenre" placeholder="Genre / Dependences fr"></input><br/>
+</div>
+
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<div class="half">
+<h4>English</h4>
+<input name="enurl" placeholder="Url en"></input><br/>
+<input name="entitle" placeholder="Titre en"></input><br/>
+<textarea name="endescription" placeholder="Description en"></textarea><br/>
+<textarea name="encontent" placeholder="Content en"></textarea><br/>
+<input name="engenre" placeholder="Genre / Dependences en"></input><br/>
+</div>
+<div class="clearer"></div>
+<!-- --------------------------------------------------------------------------------------------------- -->
+
+<input type="checkbox" name="hascodedetail" value="true">With codedetail ?<br/>
+<input name="programminglanguage" placeholder="programming language"></input><br/>
+<input name="coderepository" placeholder="code repository"></input><br/>
+<input name="targetproduct" placeholder="Target product / os : unityv4, debian 7 ..."></input><br/>
+<input name="runtime" placeholder="runtime = plateforme exple: java1.0, .net framework 4.0 etc..."></input><br/>
+<select name="level">
+<option value="lblBeginner" selected>{% trans "lblBeginner" %}</option>
+<option value="lblIntermediate">{% trans "lblIntermediate" %}</option>
+<option value="lblAdvanced">{% trans "lblAdvanced" %}</option>
+<option value="lblExpert">{% trans "lblExpert" %}</option>
+</select><br/>
+
+<input type="submit" value="Add computing"></input>
+</form>
+
+
+
+<h1 id="edit-delete">Edit</h1>
+{%for post in all %}
+		{% editdelete post=post %}
+{% endfor %}
+
+
+</body>
+</html>
+
+{% endspaceless %}
+

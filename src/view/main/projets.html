@@ -1,0 +1,32 @@
+{% extends "master.html" %}
+{% block title %}{% if project %}{{ project.title }} | {% endif %}{% trans "lblProjects" %} | {% endblock %}
+
+{% block content %}
+<div class="project">
+
+	{% if post %}
+		{% with catUrl=post.category|add:"URL" %}<section id="{% trans catUrl %}">
+		<header><h2>{% trans post.category %}</h2></header>
+		{% projectfull post=post %}
+		{% endwith %}
+		</section>
+	{% elif list %}
+		{% for section in list %}
+		{% if section %}
+			{% for project in section %}
+				{% with catUrl=project.category|add:"URL" %}
+				{% if forloop.first %}
+					<section id="{% trans catUrl %}">
+					<header><h2>{% trans project.category %}</h2></header>
+				{% endif %}
+				{% projectpreview post=project %}
+				{% endwith %}
+			{% endfor %}
+			<section>
+			{% endif %}
+		{% endfor %}
+	{% else %}
+		<p>{% trans "lblNothing" %}</p>
+	{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,9 @@
+		{% if list %}
+			{% with post=list|first|first %}
+				{% breadcrumb action=post.infos.action %}
+			{% endwith %}
+		{% elif post %}
+			{% breadcrumb action=post.infos.action category=post.category post=post.url postTitle=post.title %}
+		{% else %}
+			{% breadcrumb %}
+		{% endif %}

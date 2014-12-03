@@ -1,0 +1,128 @@
+{% spaceless %}
+{% with EN=_lang|isEN lang=_lang|trans langUPPER=_lang|transUpper lblLang=_lang|labelLang %}
+<!DOCTYPE html>
+<html dir="ltr" lang="{{ _lang }}">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width">
+		<title>{% block title %}{% endblock %}Paint 'n' Code</title>
+		<link rel="shortcut icon" href="/static/images/interface/favicon.ico">
+		<link rel="stylesheet" href="/static/style/style.css">
+		<link rel="stylesheet" href="/static/style/magnific-popup.css">
+		<script src="/static/js/jquery-2.0.2.min.js"></script>
+		<script src="/static/js/ftg.min.js"></script>
+		<script src="/static/js/jquery.magnific-popup.min.js"></script>
+		<script src="/static/js/menu.min.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ext-static_highlight.js"></script>
+		<script src="//cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/theme-monokai.js"></script>
+		<script src="/static/js/jquery.cycle2.min.js"></script>
+		<script src="/static/js/highlighter.min.js"></script>
+	</head>
+	<body itemscope itemtype="http://schema.org/WebPage">
+		<div id="container" class="shadowed">
+			<header>
+				<link itemprop="url" href="http://www.paint-n-code.com/" />
+				<meta itemprop="description" content="{% trans "lblBlogDescription" %}" />
+				<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<ul>
+						<li>
+							<a rel="home" itemprop="url" href="{{ EN }}/">
+								<div role="banner">
+									<h1>Paint 'n' code</h1>
+								</div>
+							</a>
+						</li>
+						<li class="minimenu"><img src="/static/images/interface/minimenu.jpg" alt="Responsive menu button for smartphones and small devices"/></li>
+						<li>
+							<a itemprop="url" href="{{ EN }}/{% trans "lblArtworkURL" %}"><span itemprop="name">{% trans "lblArtwork" %}</span></a>
+							<ul>
+								<li><a href="{{ EN }}/{% trans "lblArtworkURL" %}#{% trans "lblPaintingsURL" %}"><span>{% trans "lblPaintings" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblArtworkURL" %}#{% trans "lblConceptArtURL" %}"><span>{% trans "lblConceptArt" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblArtworkURL" %}#{% trans "lblSpeedPaintingURL" %}"><span>{% trans "lblSpeedPainting" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblArtworkURL" %}#{% trans "lblSketchesURL" %}"><span>{% trans "lblSketches" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblArtworkURL" %}#{% trans "lblSculptureURL" %}"><span>{% trans "lblSculpture" %}</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a itemprop="url" href="{{ EN }}/{% trans "lblProgrammingURL" %}"><span itemprop="name">{% trans "lblProgramming" %}</span></a>
+							<ul>
+								<li><a href="{{ EN }}/{% trans "lblProgrammingURL" %}/{% trans "lblWebURL" %}"><span>{% trans "lblWeb" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProgrammingURL" %}/{% trans "lblSoftwareURL" %}"><span>{% trans "lblSoftware" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProgrammingURL" %}/{% trans "lblSGBDURL" %}"><span>{% trans "lblSGBD" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProgrammingURL" %}/{% trans "lblSystemURL" %}"><span>{% trans "lblSystem" %}</span></a></li>
+							</ul>
+						</li>
+						<li>
+							<a itemprop="url" href="{{ EN }}/{% trans "lblProjectsURL" %}"><span itemprop="name">{% trans "lblProjects" %}</span></a>
+							<ul>
+								<li><a href="{{ EN }}/{% trans "lblProjectsURL" %}#{% trans "lblGamesURL" %}"><span>{% trans "lblGames" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProjectsURL" %}#{% trans "lblBooksURL" %}"><span>{% trans "lblBooks" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProjectsURL" %}#{% trans "lblComicsURL" %}"><span>{% trans "lblComics" %}</span></a></li>
+								<li><a href="{{ EN }}/{% trans "lblProjectsURL" %}#{% trans "lblContestsURL" %}"><span>{% trans "lblContests" %}</span></a></li>
+							</ul>
+						</li>
+						
+						<li class="langmenu"><a title="{% trans lblLang %}" href="{{ translationURL }}">{{ langUPPER }}</a><img alt="{% trans lblLang %}" src="/static/images/interface/{{ lang }}.jpg"/></li>
+						
+					</ul>
+				</nav>
+				<div id="carousel" {% if translationURL != "/" and translationURL != "/en" %}style="height:60px;"{% endif %} class="cycle-slideshow">
+						<img src="/static/images/interface/carousel/0.jpg" alt="Carousel first picture"/>
+						<img src="/static/images/interface/carousel/1.jpg" alt="Carousel second picture"/>
+						<img src="/static/images/interface/carousel/2.jpg" alt="Carousel third picture"/>
+						<img src="/static/images/interface/carousel/3.jpg" alt="Carousel fourth picture"/>
+				</div>
+		<meta itemprop="award" content="Stylish Blogger Award"/>
+		<time itemprop="dateModified" datetime="2014-04-01"></time>
+		<div class="clearer"></div>
+		</header>
+
+		<ul id="breadcrumb" itemprop="breadcrumb">
+			<li itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+				<a itemprop="url" href="{{ EN }}/">
+				<img src="/static/images/interface/home.png" alt="{% trans "lblHome" %}" title="{% trans "lblHome" %}"/>
+				<meta  itemprop="title" content="{% trans "lblHome" %}"/>
+				</a>
+			</li>
+		</ul>
+
+
+		<main role="main" itemprop="mainContentOfPage" {% block additionnalMainMetas %}{% endblock %}>
+		{% block content %}
+		{% endblock %}
+		<div class="clearer"></div>
+		</main>
+		<aside role="complementary" itemscope itemtype="http://schema.org/WPSideBar">
+		</aside>
+		</div>
+		<div class="container">
+			<footer role="contentinfo">
+				{% block footer %}
+				<div itemprop="author creator copyrightHolder" class="vcard" itemscope itemtype="http://schema.org/Person">
+					<img alt="Francois Reynal Portrait" itemprop="image" class="photo" src="/static/images/interface/favicon.ico" />
+					<div>
+						<span itemprop="name" class="fn">Francois Reynal</span>
+						<span itemprop="jobTitle" class="title">{% trans "lblProgrammer" %}</span>
+						<div itemprop="address" itemscope itemtype="http://schema.org/postalAddress" class="adr">
+							<span itemprop="addressLocality" class="locality">Malakoff</span>
+							<span itemprop="postalCode" class="postal-code">92240</span>
+							<span itemprop="addressCountry" class="country-name">France</span>
+						</div>
+						<!--<span itemprop="telephone" class="tel">06........</span>-->
+						<div itemprop="email" class="email">francois-reynal@paint-n-code.com</div>
+						<a itemprop="url" class="url" href="http://paint-n-code.com/">Paint 'n' Code</a>
+					</div>
+					<img class="right" height="50" src="/static/images/interface/ssl.png" alt="SSL Secure" title="SSL Secure"/>
+					<img class="right" style="margin-right:1em;" height="50" src="/static/images/interface/chicago-boss.png" alt="Chicago Boss Logo" title="Powered by Chicago Boss (using Erlang &amp; Mnesia)"/>
+					<img class="right" style="margin-right:1em;" height="50" src="/static/images/interface/w3c-html5-css3-valid-code.png" alt="W3C HTML5 CSS3 Logo" title="W3C HTML5 &amp; CSS3 Valid"/>
+				</div>
+				<div class="credits">
+				</div>
+				{% endblock %}
+			</footer>
+		</div>
+	</body>
+</html>
+{% endwith %}
+{% endspaceless %}

@@ -1,0 +1,3 @@
+-module (infos, [Id, Action, CreationTime, ModificationTime, Half]).
+-has({bases	, 2, [{module, base}, {order_by, lang}, {descending, true}]}).
+-has({codedetail, 1}).

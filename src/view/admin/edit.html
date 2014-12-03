@@ -1,0 +1,123 @@
+{% spaceless %}
+{% with FR=info.bases|french EN=info.bases|english Code=info.codedetail %}
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8"/><style type="text/css">input, select {width:100%} textarea {width:100%;height:300px}</style></head>
+<body>
+<h1>Edit !</h1>
+<form method="POST" action="{% url action="update" %}">
+
+
+{% if info %}
+<h2>info</h2>
+<input type="hidden" name="infoid" value="{{info.id}}"></input>
+<select name="infoaction">
+<option selected value={{ info.action }}>Default : {% trans info.action %}</option>
+<option value="lblArtwork">{% trans "lblArtwork" %}</option>
+<option value="lblProgramming">{% trans "lblProgramming" %}</option>
+<option value="lblProjects">{% trans "lblProjects" %}</option>
+</select></br>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<input type="checkbox" name="infohalf" value="half" {% if info.half %}checked{% endif %}>Is half ?<br/>
+<!-- --------------------------------------------------------------------------------------------------- -->
+<select name="category">
+{% if FR %}
+<option selected value={{FR.category}}>Default : {% trans FR.category %}</option>
+{% endif %}
+
+<option disabled role="separator">--   {% trans "lblArtwork" %}  --</option>
+<option value="lblPaintings">{% trans "lblPaintings" %}</option>
+<option value="lblConceptArt">{% trans "lblConceptArt" %}</option>
+<option value="lblSpeedPainting">{% trans "lblSpeedPainting" %}</option>
+<option value="lblSketches">{% trans "lblSketches" %}</option>
+<option value="lblSculpture">{% trans "lblSculpture" %}</option>
+
+<option disabled role="separator">-- {% trans "lblProgramming" %} --</option>
+<option value="lblWeb">{% trans "lblWeb" %}</option>
+<option value="lblSoftware">{% trans "lblSoftware" %}</option>
+<option value="lblSGBD">{% trans "lblSGBD" %}</option>
+<option value="lblSystem">{% trans "lblSystem" %}</option>
+
+<option disabled role="separator">--    {% trans "lblProjects" %}   --</option>
+<option value="lblGames">{% trans "lblGames" %}</option>
+<option value="lblBooks">{% trans "lblBooks" %}</option>
+<option value="lblComics">{% trans "lblComics" %}</option>
+<option value="lblContests">{% trans "lblContests" %}</option>
+
+</select>
+{% endif %}
+
+
+
+
+{% if FR %}
+<div class="half">
+<h2>Base FR</h2>
+<input type="hidden" name="frid" value="{{ FR.id }}"></input>
+<input name="frurl" placeholder="Url fr" value="{{ FR.url }}"></input><br/>
+<input name="frtitle" placeholder="Titre fr" value="{{ FR.title }}"></input><br/>
+<textarea name="frdescription" placeholder="Description fr">{{ FR.description|safe }}</textarea><br/>
+<textarea name="frcontent" placeholder="Content fr">{{ FR.content|safe }}</textarea><br/>
+<input name="frgenre" placeholder="Genre / Dependences fr" value="{{ FR.genre|safe }}"></input><br/>
+</div>
+{% endif %}
+
+
+
+
+{% if EN %}
+<div class="half">
+<h2>Base EN</h2>
+<input type="hidden" name="enid" value="{{ EN.id }}"></input>
+<input name="enurl" placeholder="Url en" value="{{ EN.url }}"></input><br/>
+<input name="entitle" placeholder="Titre en" value="{{ EN.title }}"></input><br/>
+<textarea name="endescription" placeholder="Description en">{{ EN.description|safe }}</textarea><br/>
+<textarea name="encontent" placeholder="Content en">{{ EN.content|safe }}</textarea><br/>
+<input name="engenre" placeholder="Genre / Dependences en" value="{{ EN.genre|safe }}"></input><br/>
+</div>
+{% endif %}
+
+
+
+<div class="clearer"></div>
+
+<input type="checkbox" name="hascodedetail" value="true" {% if Code %}checked{% endif %}>With codedetail ?<br/>
+
+{% if Code %}
+<h2>Codedetail</h2>
+<input type="hidden" name="codeid" value="{{Code.id}}"></input>
+<input name="programminglanguage" placeholder="programming language" value="{{ Code.programming_language }}"></input><br/>
+<input name="coderepository" placeholder="code repository" value="{{ Code.repository }}"></input><br/>
+<input name="targetproduct" placeholder="Target product / os : unityv4, debian 7 ..." value="{{ Code.target_product }}"></input><br/>
+<input name="runtime" placeholder="runtime = plateforme exple: java1.0, .net framework 4.0 etc..." value="{{ Code.runtime }}"></input><br/>
+<select name="level">
+<option selected value={{Code.level}}>Default : {% trans Code.level %}</option>
+
+<option value="lblBeginner">{% trans "lblBeginner" %}</option>
+<option value="lblIntermediate">{% trans "lblIntermediate" %}</option>
+<option value="lblAdvanced">{% trans "lblAdvanced" %}</option>
+<option value="lblExpert">{% trans "lblExpert" %}</option>
+</select><br/>
+{% else %}
+<h2>Add a Codedetail</h2>
+<input type="hidden" name="codeid" value=""></input>
+<input type="checkbox" name="hascodedetail" value="true">With codedetail ?<br/>
+<input name="programminglanguage" placeholder="programming language"></input><br/>
+<input name="coderepository" placeholder="code repository"></input><br/>
+<input name="targetproduct" placeholder="Target product / os : unityv4, debian 7 ..."></input><br/>
+<input name="runtime" placeholder="runtime = plateforme exple: java1.0, .net framework 4.0 etc..."></input><br/>
+<select name="level">
+<option value="lblBeginner">{% trans "lblBeginner" %}</option>
+<option value="lblIntermediate">{% trans "lblIntermediate" %}</option>
+<option value="lblAdvanced">{% trans "lblAdvanced" %}</option>
+<option value="lblExpert">{% trans "lblExpert" %}</option>
+</select><br/>
+{% endif %}
+
+
+<input type="submit" value="Update"></input>
+
+
+</form>
+</body>
+</html>
+{% endwith %}
+{% endspaceless %}

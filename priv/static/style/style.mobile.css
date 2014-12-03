@@ -1,0 +1,17 @@
+.half {
+width:100%;
+padding-right:0;
+}
+    /*================      DROP DOWN MENU
+    */
+    #container header nav ul li:first-child {
+        display: block;
+    }
+
+    #container header nav ul li.langmenu {
+        display: block;
+    }
+
+    #container header nav ul li {
+        display: none;
+    }

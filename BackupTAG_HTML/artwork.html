@@ -1,0 +1,13 @@
+{% comment %}
+NEEDED :
+post : Base
+{% endcomment %}
+
+<article class="{{ post.infos.half }}" itemscope itemtype="http://schema.org/CreativeWork">
+	<img itemprop="image url" src="{{post.url}}" alt="{{post.description}}"/>
+	<h3 itemprop="name">{{post.title}}</h3>
+	<meta itemprop="description" content="{{post.description}}"/>
+	<meta itemprop="dateCreated datePublished" content="{{post.infos.creation_time|date:"c"}}"/>
+	<meta itemprop="dateModified" content="{{post.infos.modification_time|date:"c"}}"/>
+	<meta itemprop="license" content="http://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+</article>

@@ -1,0 +1,2 @@
+-module (codedetail, [Id, InfosId, ProgrammingLanguage, Repository, TargetProduct, Runtime, Level]).
+-belongs_to(infos).

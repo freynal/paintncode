@@ -1,0 +1,1 @@
+-module (computing, [Id, CreationTime, FrUrlDetail, EnUrlDetail, FrTitle, EnTitle, FrDescription, EnDescription, FrContent, EnContent, FrCategory, EnCategory, CodeRepository, ProgrammingLanguage, Runtime, TargetProduct, Dependencies, FrLevel, EnLevel, Half]).

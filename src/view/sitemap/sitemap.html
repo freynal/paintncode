@@ -1,0 +1,66 @@
+{% spaceless %}{% with EN=_lang|isEN %}<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+	xmlns:xhtml="http://www.w3.org/1999/xhtml">
+	<url>
+		<loc>http://paint-n-code.com/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/"/>
+	</url>
+	<url>
+		<loc>http://paint-n-code.com/en/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/"/>
+	</url>
+
+	<url>
+		<loc>http://paint-n-code.com/portfolio/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/portfolio/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/artwork/"/>
+	</url>
+	<url>
+		<loc>http://paint-n-code.com/en/artwork/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/portfolio/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/artwork/"/>
+	</url>
+
+	<url>
+		<loc>http://paint-n-code.com/informatique/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/informatique/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/computing/"/>
+	</url>
+	<url>
+		<loc>http://paint-n-code.com/en/computing/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/informatique/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/computing/"/>
+	</url>
+
+	<url>
+		<loc>http://paint-n-code.com/projets/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/projets/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/projects/"/>
+	</url>
+	<url>
+		<loc>http://paint-n-code.com/en/projects/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/projets/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/projects/"/>
+	</url>
+
+
+{% for post in list %}
+	{% with postFR=post.bases|french postEN=post.bases|english %}
+	<url>
+		<loc>http://paint-n-code.com/{{ post.action|fr }}/{{ postFR.category|fr }}/{{ postFR.url }}/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/{{ postFR.infos.action|fr }}/{{ postFR.category|fr }}/{{ postFR.url }}/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/{{ postEN.infos.action|en }}/{{ postEN.category|en }}/{{ postEN.url }}/"/>
+	</url>
+	<url>
+		<loc>http://paint-n-code.com/en/{{ post.action|en }}/{{ postEN.category|en }}/{{ postEN.url }}/</loc>
+			<xhtml:link rel="alternate" hreflang="fr" href="http://paint-n-code.com/{{ postFR.infos.action|fr }}/{{ postFR.category|fr }}/{{ postFR.url }}/"/>
+			<xhtml:link rel="alternate" hreflang="en" href="http://paint-n-code.com/en/{{ postEN.infos.action|en }}/{{ postEN.category|en }}/{{ postEN.url }}/"/>
+	</url>
+	{% endwith %}
+{% endfor %}
+
+</urlset>
+{% endwith %}
+{% endspaceless %}

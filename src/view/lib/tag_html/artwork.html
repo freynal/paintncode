@@ -1,0 +1,18 @@
+{% comment %}
+NEEDED :
+post : Base
+<article class="{{ post.infos.half }}">...</article>
+{% endcomment %}
+
+{% with catUrl=post.category|add:"URL" %}
+<article class="tile ftg-{% trans catUrl %}" itemscope itemtype="http://schema.org/CreativeWork">
+	<a class="tile-inner" data-source="{{post.url}}" title="{{post.title}}" href="{{post.url}}">
+		<img class="item" itemprop="image url" src="{{post.url}}" alt="{{post.description}}"/>
+		<h3 itemprop="name">{{post.title}}</h3>
+		<meta itemprop="description" content="{{post.description}}"/>
+		<meta itemprop="dateCreated datePublished" content="{{post.infos.creation_time|date:"c"}}"/>
+		<meta itemprop="dateModified" content="{{post.infos.modification_time|date:"c"}}"/>
+		<meta itemprop="license" content="http://creativecommons.org/licenses/by-nc-nd/4.0/"/>
+	</a>
+</article>
+{% endwith %}

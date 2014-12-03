@@ -1,0 +1,15 @@
+{% comment %}
+NEEDED :
+post - le post
+{% endcomment %}
+
+<span>{{post.title}}</span>
+<form method="POST" action="{% url action="edit" %}">
+<input type="hidden" name="id" value="{{post.infos.id}}"></input>
+<input type="submit" value="Edit"></input><br/>
+</form>
+<form method="POST" action="{% url action="delete" %}">
+<input type="hidden" name="id" value="{{post.infos.id}}"></input>
+<input type="submit" value="Delete"></input><br/>
+</form>
+<br/>

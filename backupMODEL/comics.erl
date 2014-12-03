@@ -1,0 +1,1 @@
+-module (comics, [Id, CreationTime, FrUrlDetail, EnUrlDetail, FrTitle, EnTitle, FrDescription, EnDescription, FrContent, EnContent, FrGenre, EnGenre, UrlImage]).

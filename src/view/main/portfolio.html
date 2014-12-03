@@ -1,0 +1,64 @@
+{% extends "master.html" %}
+{% block title %}{% trans "lblArtwork" %} | {% endblock %}
+
+{% block content %}
+
+<div class="artworks">
+	<div class="ftg-filters">
+		<a href="#">All</a>
+		{% for section in list %}
+			{% for artwork in section %}
+				{% if forloop.first %}
+					{% with catUrl=artwork.category|add:"URL" %}
+						<a href="#{% trans catUrl %}">{% trans artwork.category %}</a>
+					{% endwith %}
+				{% endif %}
+			{% endfor %}
+		{% endfor %}
+	</div>
+	<div class="ftg-items">
+	{% for section in list %}
+		{% for artwork in section %}
+			{% if forloop.first %}
+				{% with catUrl=artwork.category|add:"URL" %}
+					<section id="{% trans catUrl %}">
+				{% endwith %}
+				<h2>{% trans artwork.category %}</h2>
+			{% endif %}
+			{% artwork post=artwork %}
+			{% if forloop.last %}
+				<div class="clearer"></div></section>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+	</div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  //$(window).load(function() {
+    $('.artworks').finalTilesGallery({
+    	margin: 30,
+		gridCellSize: 50,
+		minTileWidth: 300,
+		imageSizeFactor: .4
+    });
+  //});
+  $(document).ready(function() {
+	  $('.artworks').magnificPopup({
+	  	delegate: 'a.tile-inner',
+	  	type:'image',
+	  	verticalFit: true,
+	  	gallery: {
+	  		enabled: true,
+	  		preload: [0,2]
+	  	},
+	  	mainClass: 'mfp-with-zoom', 
+		  zoom: {
+		    enabled: true,
+		    duration: 300,
+		    easing: 'ease-in-out',
+		  }
+	  });
+  });
+</script>
+{% endblock %}

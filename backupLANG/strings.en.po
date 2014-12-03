@@ -1,0 +1,172 @@
+msgid "lblBlogDescription"
+msgstr "Description"
+
+msgid "lblHome"
+msgstr "home"
+msgid "lblHomeURL"
+msgstr "home"
+
+msgid "lblArtwork"
+msgstr "artwork"
+
+msgid "lblArtworkURL"
+msgstr "artwork"
+
+msgid "lblPaintings"
+msgstr "paintings"
+
+msgid "lblPaintingsURL"
+msgstr "paintings"
+
+msgid "lblConceptArt"
+msgstr "concept art"
+
+msgid "lblConceptArtURL"
+msgstr "concept-art"
+
+msgid "lblSpeedPainting"
+msgstr "speed painting"
+
+msgid "lblSpeedPaintingURL"
+msgstr "speed-painting"
+
+msgid "lblSketches"
+msgstr "sketches"
+
+msgid "lblSketchesURL"
+msgstr "sketches"
+
+msgid "lblSculpture"
+msgstr "sculpture"
+
+msgid "lblSculptureURL"
+msgstr "sculpture"
+
+msgid "lblProgramming"
+msgstr "computing"
+
+msgid "lblProgrammingURL"
+msgstr "computing"
+
+msgid "lblWeb"
+msgstr "web"
+
+msgid "lblWebURL"
+msgstr "web"
+
+msgid "lblSoftware"
+msgstr "software"
+
+msgid "lblSoftwareURL"
+msgstr "software"
+
+msgid "lblSGBD"
+msgstr "database"
+
+msgid "lblSGBDURL"
+msgstr "database"
+
+msgid "lblSystem"
+msgstr "system"
+
+msgid "lblSystemURL"
+msgstr "system"
+
+msgid "lblProjects"
+msgstr "projects"
+
+msgid "lblProjectsURL"
+msgstr "projects"
+
+msgid "lblGames"
+msgstr "games"
+
+msgid "lblGamesURL"
+msgstr "games"
+
+msgid "lblBooks"
+msgstr "books"
+
+msgid "lblBooksURL"
+msgstr "books"
+
+msgid "lblComics"
+msgstr "comics"
+
+msgid "lblComicsURL"
+msgstr "comics"
+
+msgid "lblContests"
+msgstr "contests"
+
+msgid "lblContestsURL"
+msgstr "contests"
+
+msgid "lblFR"
+msgstr "Français"
+
+msgid "lblEN"
+msgstr "Anglais"
+
+msgid "lblProgrammer"
+msgstr "Programmer"
+
+msgid "lblCategory"
+msgstr "Category"
+
+msgid "lblDependencies"
+msgstr "Dependencies"
+
+msgid "lblLevel"
+msgstr "Level"
+
+msgid "lblBeginner"
+msgstr "Beginner"
+
+msgid "lblIntermediate"
+msgstr "Intermediate"
+
+msgid "lblAdvanced"
+msgstr "Advanced"
+
+msgid "lblExpert"
+msgstr "Expert"
+
+msgid "lblRuntime"
+msgstr "Runtime"
+
+msgid "lblTargetProduct"
+msgstr "Using"
+
+msgid "lblRepository"
+msgstr "Code Repository"
+
+msgid "lblProgrammingLanguage"
+msgstr "Language"
+
+msgid "lblFrom"
+msgstr "From"
+
+msgid "lblSubject"
+msgstr "Subject"
+
+msgid "lblMessage"
+msgstr "Message"
+
+msgid "lblContact"
+msgstr "Contact"
+
+msgid "lblSendMail"
+msgstr "Send Mail"
+
+msgid "lblOnlineCV"
+msgstr "Online resume"
+
+msgid "lblError"
+msgstr "Error"
+
+msgid "lbl404"
+msgstr "Error 404 : A potatoe stole this page"
+
+msgid "lblNothing"
+msgstr "Nothing here yet !"
